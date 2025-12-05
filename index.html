@@ -3,67 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Portfolio</title>
+    <title>Eduardo Alexis | Full-Stack Developer</title>
     <link rel="stylesheet" href="style.css">
-</head>
+    </head>
 <body>
-    <header>
-        <div class="logo">Eduardo Alexis</div>
-        <nav>
-            <a href="#projects">Projects</a>
+
+    <header class="main-header">
+        <a href="#" class="logo">EDUARDO ALEXIS</a>
+        <nav class="main-nav">
+            <a href="#projects">Work</a>
             <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+            <a href="#contact" class="nav-cta">Contact</a>
         </nav>
     </header>
 
-    <section class="hero">
-        <h1>Full-Stack Developer. Innovator.</h1>
-        <p>Building clean, scalable, and user-focused applications.</p>
-    </section>
-
-    <section id="projects" class="container projects">
-        <h2>Featured Work</h2>
-
-        <div class="project-card">
-            <h3>AeroLog-MX</h3>
-            <p>A full-stack application for streamlined flight logging and management.</p>
-            <a href="https://github.com/EduAlexxis/AeroLog-MX.git" target="_blank" class="cta-button">View on GitHub</a>
-        </div>
-
-        <div class="project-card">
-            <h3>Vicksy</h3>
-            <p>Description of Vicksy (e.g., A modern, clean e-commerce platform built with X and Y).</p>
-            <a href="https://github.com/EduAlexxis/Vicksy.git" target="_blank" class="cta-button">View on GitHub</a>
-        </div>
-        
-        <div class="project-card">
-            <h3>VidSwipe</h3>
-            <p>Description of VidSwipe (e.g., A video content aggregator with a unique swipe interface).</p>
-            <a href="https://github.com/EduAlexxis/VidSwipe.git" target="_blank" class="cta-button">View on GitHub</a>
+    <section class="hero-section">
+        <div class="hero-content">
+            <p class="subtitle">Innovating at the intersection of mobile and enterprise.</p>
+            <h1>Building Applications That Solve Real-World Problems.</h1>
+            <a href="#projects" class="primary-cta">View Featured Projects &darr;</a>
         </div>
     </section>
 
-    <section id="about" class="container about">
-        <h2>About Me</h2>
-        <p>I am a passionate developer committed to writing clean, maintainable code. My expertise lies in [mention key tech stacks like React, Node.js, Python, etc.]. I enjoy turning complex problems into simple, beautiful solutions.</p>
-        <div class="skills">
-            <h4>Key Technologies:</h4>
-            <ul>
-                <li>JavaScript (ES6+)</li>
-                <li>React/Vue/Angular</li>
-                <li>Node.js / Express</li>
-                <li>SQL / MongoDB</li>
-                <li>Docker</li>
-            </ul>
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2>Featured Work</h2>
+
+            <div class="project-card">
+                <div class="project-details">
+                    <span class="tag">Aviation / Enterprise Mobile</span>
+                    <h3>AeroLog-MX</h3>
+                    <p>The Intelligent Logbook for Aviation Professionals. Built for the hangar floor, it uses **on-device OCR** to seamlessly scan part numbers, provides visual evidence logging, and ensures audit-ready compliance via secure **iCloud Sync**.</p>
+                    <a href="https://edualexxis.github.io/AeroLog-MX/home.html" target="_blank" class="project-link">View Live Site &rarr;</a>
+                    <a href="https://github.com/EduAlexxis/AeroLog-MX.git" target="_blank" class="project-link secondary">Source Code</a>
+                </div>
+                <div class="project-visual mockup-aerolog"></div>
+            </div>
+
+            <div class="project-card reverse">
+                 <div class="project-visual mockup-vicksy"></div>
+                <div class="project-details">
+                    <span class="tag">Productivity / iOS</span>
+                    <h3>Vicksy - Academic Companion</h3>
+                    <p>A modern productivity application helping students organize classes, track deadlines, and master their schedule. Key features include a **Smart Schedule** (color-coded timeline) and secure data synchronization via **iCloud Sync**.</p>
+                    <a href="https://edualexxis.github.io/Vicksy/" target="_blank" class="project-link">View Live Site &rarr;</a>
+                    <a href="https://github.com/EduAlexxis/Vicksy.git" target="_blank" class="project-link secondary">Source Code</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-details">
+                    <span class="tag">Media / Privacy Focused</span>
+                    <h3>VidSwipe (ReelVault)</h3>
+                    <p>A personal video library reimagined. This app offers an immersive, infinite vertical feed of memories while prioritizing user trust with a **"Privacy First"** architecture—all media processing and storage occurs **locally** on the device.</p>
+                    <a href="https://edualexxis.github.io/VidSwipe/" target="_blank" class="project-link">View Live Site &rarr;</a>
+                    <a href="https://github.com/EduAlexxis/VidSwipe.git" target="_blank" class="project-link secondary">Source Code</a>
+                </div>
+                <div class="project-visual mockup-vidswipe"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>My Focus</h2>
+            <div class="about-grid">
+                <p class="bio-text">I am a Full-Stack developer specializing in building beautiful, high-performance mobile and web solutions. My work is driven by a passion for clean architecture and robust deployment practices.</p>
+                <div class="skills-list">
+                    <h4>Core Expertise:</h4>
+                    <ul>
+                        <li>Mobile: iOS (Swift/UIKit), Cross-Platform (React Native)</li>
+                        <li>Backend: Node.js, Express, Python (Django)</li>
+                        <li>Database: PostgreSQL, MongoDB</li>
+                        <li>DevOps: Docker, Git, CI/CD</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer id="contact">
-        <p>Let's build something great. Reach me at: **youremail@example.com**</p>
-        <div class="social-links">
-            <a href="#" target="_blank">LinkedIn</a>
-            <a href="https://github.com/EduAlexxis" target="_blank">GitHub</a>
+        <div class="container">
+            <h2 class="contact-title">Let's Connect</h2>
+            <p>I am currently seeking new challenges in full-stack development. Feel free to reach out for collaboration or professional inquiries.</p>
+            <a href="mailto:youremail@example.com" class="primary-cta">Send Me an Email</a>
+            
+            <div class="social-links">
+                <a href="https://github.com/EduAlexxis" target="_blank">GitHub</a>
+                <a href="#">LinkedIn</a>
+                <span>|</span>
+                <p>&copy; 2025 Eduardo Alexis. All rights reserved.</p>
+            </div>
         </div>
     </footer>
+
 </body>
 </html>
