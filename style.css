@@ -1,12 +1,17 @@
-/* Minimalist Reset & Variables */
+/* ------------------------------------ */
+/* 1. Global Reset & Variables */
+/* ------------------------------------ */
 :root {
-    --primary-color: #000000;
-    --secondary-color: #333333;
-    --background-color: #ffffff;
-    --accent-color: #007bff; /* A subtle color for hover/buttons */
-    --font-family: 'Helvetica Neue', Arial, sans-serif;
-    --max-width: 1100px;
-    --padding: 50px;
+    --primary-font: 'Arial', sans-serif;
+    --heading-font: 'Helvetica Neue', Arial, sans-serif;
+    --primary-color: #1a1a1a;        /* Near Black for Text/Background */
+    --secondary-color: #555555;      /* Gray for Subtext */
+    --background-light: #ffffff;     /* White/Light Gray Background */
+    --background-dark: #f5f5f5;      /* Off-White for sections */
+    --accent-color: #007aff;         /* Modern Blue for CTA */
+    --border-color: #e0e0e0;
+    --max-width: 1200px;
+    scroll-behavior: smooth;
 }
 
 * {
@@ -16,171 +21,339 @@
 }
 
 body {
-    font-family: var(--font-family);
+    font-family: var(--primary-font);
     line-height: 1.6;
-    background-color: var(--background-color);
-    color: var(--secondary-color);
+    color: var(--primary-color);
+    background-color: var(--background-light);
 }
 
 .container {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: var(--padding) 20px;
+    padding: 100px 40px; /* Generous vertical padding */
 }
 
-/* Typography */
-h1 {
-    font-size: 3.5em;
+/* ------------------------------------ */
+/* 2. Typography */
+/* ------------------------------------ */
+h1, h2, h3 {
+    font-family: var(--heading-font);
     font-weight: 700;
+    line-height: 1.2;
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 2.5rem; text-align: center; }
+h3 { font-size: 1.8rem; margin-bottom: 0.5rem; font-weight: 600; }
+
+a {
     color: var(--primary-color);
-    margin-bottom: 0.5em;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
-h2 {
-    font-size: 2em;
-    font-weight: 500;
-    color: var(--primary-color);
-    margin-bottom: 1.5em;
-    text-align: center;
-}
-
-h3 {
-    font-size: 1.5em;
-    font-weight: 500;
-    color: var(--primary-color);
-    margin-bottom: 0.5em;
-}
-
-p {
-    margin-bottom: 1em;
-}
-
-/* Header/Nav */
-header {
+/* ------------------------------------ */
+/* 3. Header & Navigation */
+/* ------------------------------------ */
+.main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    border-bottom: 1px solid #eee;
     position: sticky;
     top: 0;
-    background-color: var(--background-color);
-    z-index: 100;
+    padding: 20px 40px;
+    background-color: var(--background-light);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
 }
 
 .logo {
-    font-size: 1.5em;
-    font-weight: 700;
-    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 1px;
 }
 
-nav a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    margin-left: 25px;
+.main-nav a {
+    margin-left: 30px;
     font-weight: 500;
-    transition: color 0.3s;
+    padding: 5px 0;
+    position: relative;
 }
 
-nav a:hover {
-    color: var(--primary-color);
+.main-nav a:hover { color: var(--accent-color); }
+
+.nav-cta {
+    border: 1px solid var(--primary-color);
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+.nav-cta:hover {
+    background-color: var(--accent-color);
+    color: var(--background-light);
+    border-color: var(--accent-color);
 }
 
-/* Hero Section */
-.hero {
+/* ------------------------------------ */
+/* 4. Hero Section */
+/* ------------------------------------ */
+.hero-section {
+    min-height: 80vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 70vh; /* Takes up most of the initial view */
-    padding: var(--padding) 20px;
+    background: linear-gradient(145deg, var(--background-light) 0%, var(--background-dark) 100%);
+    padding: 40px 20px;
 }
 
-.hero p {
-    font-size: 1.2em;
+.hero-content {
+    max-width: 900px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
     color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
-/* Projects Section */
-.projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    padding-bottom: 100px;
+.primary-cta {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 30px;
+    background-color: var(--primary-color);
+    color: var(--background-light);
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+}
+
+.primary-cta:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+
+/* ------------------------------------ */
+/* 5. Projects Section */
+/* ------------------------------------ */
+.projects-section {
+    background-color: var(--background-light);
 }
 
 .project-card {
-    padding: 30px;
-    border: 1px solid #eeeeee;
-    transition: transform 0.3s, box-shadow 0.3s;
-    background-color: #fafafa;
+    display: flex;
+    gap: 80px;
+    align-items: center;
+    margin-bottom: 120px;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border-color); /* Separator line */
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+/* Reverse layout for alternating design */
+.project-card.reverse {
+    flex-direction: row-reverse;
 }
 
-.cta-button {
+.project-details {
+    flex: 1;
+    max-width: 55%;
+}
+.project-card.reverse .project-details {
+     text-align: right; /* Align text on reverse cards */
+     margin-right: -40px; /* Optional: adjust spacing */
+}
+
+/* Project Visual (Placeholder) */
+.project-visual {
+    flex: 1;
+    min-width: 350px;
+    height: 400px;
+    background-color: var(--background-dark); /* Placeholder color */
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    /* **TODO: Replace background-color with a background image of your app mockup** */
+}
+
+/* Specific visual placeholders (Optional: for different colors/icons) */
+.mockup-aerolog { background-color: #f0f8ff; }
+.mockup-vicksy { background-color: #fff0f0; }
+.mockup-vidswipe { background-color: #f0fff0; }
+
+
+.tag {
     display: inline-block;
-    background-color: var(--primary-color);
-    color: var(--background-color);
-    padding: 10px 20px;
-    text-decoration: none;
-    font-weight: 500;
-    margin-top: 15px;
-    transition: background-color 0.3s, color 0.3s;
-    border: 1px solid var(--primary-color);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
 }
 
-.cta-button:hover {
-    background-color: var(--background-color);
+.project-details p {
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.project-link {
+    display: inline-block;
+    margin-right: 20px;
+    font-weight: 600;
     color: var(--primary-color);
-}
-
-/* About Section */
-.about {
-    border-top: 1px solid #eee;
-    padding-top: 80px;
-    padding-bottom: 100px;
-    text-align: center;
-}
-
-.about .skills {
-    margin-top: 30px;
-    text-align: left;
-    display: inline-block;
-}
-
-.about .skills ul {
-    list-style: none;
-    padding-left: 0;
-    columns: 2; /* Simple column layout for skills */
-    text-align: left;
-}
-
-.about .skills li {
-    margin-bottom: 5px;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #f7f7f7;
-    border-top: 1px solid #eee;
-    color: var(--secondary-color);
-    font-size: 0.9em;
-}
-
-.social-links a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    margin: 0 10px;
     transition: color 0.3s;
 }
 
-.social-links a:hover {
+.project-link:hover {
+    color: var(--accent-color);
+}
+
+.project-link.secondary {
+    color: var(--secondary-color);
+    font-weight: 400;
+}
+
+/* ------------------------------------ */
+/* 6. About Section */
+/* ------------------------------------ */
+.about-section {
+    background-color: var(--background-dark);
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.about-grid {
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.bio-text {
+    flex: 2;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.skills-list {
+    flex: 1;
+    min-width: 250px;
+}
+
+.skills-list h4 {
+    margin-bottom: 10px;
+    font-weight: 600;
     color: var(--primary-color);
+}
+
+.skills-list ul {
+    list-style: none;
+    padding: 0;
+    color: var(--secondary-color);
+}
+
+.skills-list li {
+    margin-bottom: 5px;
+}
+
+/* ------------------------------------ */
+/* 7. Footer & Contact */
+/* ------------------------------------ */
+footer {
+    text-align: center;
+    padding: 80px 40px;
+    background-color: var(--primary-color);
+    color: var(--background-light);
+}
+
+.contact-title {
+    color: var(--background-light);
+}
+
+footer p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: #cccccc;
+}
+
+footer .primary-cta {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    margin-bottom: 40px;
+}
+footer .primary-cta:hover {
+    background-color: #0099ff;
+    border-color: #0099ff;
+}
+
+.social-links a,
+.social-links p,
+.social-links span {
+    color: #cccccc;
+    margin: 0 10px;
+    font-size: 0.9rem;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+/* ------------------------------------ */
+/* 8. Responsive Design (Essential for modern web) */
+/* ------------------------------------ */
+@media (max-width: 992px) {
+    .project-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    .project-card.reverse {
+        flex-direction: column; /* Reset reverse order */
+    }
+    
+    .project-details {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .project-card.reverse .project-details {
+         text-align: center;
+         margin-right: 0;
+    }
+
+    .about-grid {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .bio-text {
+        order: 2;
+    }
+
+    .skills-list {
+        order: 1;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    
+    .main-nav a:not(.nav-cta) {
+        display: none; /* Hide internal links on mobile for simplicity */
+    }
+    
+    .container {
+        padding: 80px 20px;
+    }
 }
